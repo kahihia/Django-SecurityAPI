@@ -6,3 +6,9 @@
 [![Test Coverage](https://codeclimate.com/github/DataIsTheNewBlack/Django-SecurityAPI/badges/coverage.svg)](https://codeclimate.com/github/DataIsTheNewBlack/Django-SecurityAPI/coverage)
 [![Issue Count](https://codeclimate.com/github/DataIsTheNewBlack/Django-SecurityAPI/badges/issue_count.svg)](https://codeclimate.com/github/DataIsTheNewBlack/Django-SecurityAPI)
 
+Documentation User : [![Documentation Status](https://readthedocs.org/projects/django-securityapi/badge/?version=doc-user)](http://django-securityapi.readthedocs.io/en/latest/?badge=doc-user)
+
+Documentation Dev : [![Documentation Status](https://readthedocs.org/projects/django-securityapi/badge/?version=doc-dev)](http://django-securityapi.readthedocs.io/en/latest/?badge=doc-dev)
+
+---
+
