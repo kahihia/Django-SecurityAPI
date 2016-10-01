@@ -13,13 +13,13 @@ install: "pip install -r requirements.txt"
 # command to run tests
 script: nosetests
 
-env:
-  - DJANGO_VERSION=1.7.8
-  - DJANGO_VERSION=1.8.2
 
 install:
   - pip install -q Django==$DJANGO_VERSION
   - python setup.py -q install
+  
+env:
+  - DJANGO_VERSION=1.10.1
   
 notifications:
   slack: utc-tx-gsm:oNPeOwfQS4YV4466fuXYqSUs
