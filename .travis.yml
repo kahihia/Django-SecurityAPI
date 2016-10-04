@@ -1,7 +1,7 @@
 language: python
 python:
 #  - "2.6"
-  - "2.7"
+  - 2.7
 #  - "3.2"
 #  - "3.3"
 #  - "3.4"
@@ -9,17 +9,18 @@ python:
 #  - "3.5-dev" # 3.5 development branch
 #  - "nightly" # currently points to 3.6-dev
 # command to install dependencies
-install: "pip install -r requirements.txt"
+#install: "pip install -r requirements.txt"
 # command to run tests
-script: nosetests
+#script: nosetests
 
+
+env:
+- DJANGO_VERSION=1.10.1
 
 install:
   - pip install -q Django==$DJANGO_VERSION
-  - python setup.py -q install
-  
-env:
-  - DJANGO_VERSION=1.10.1
+  #- python setup.py -q install
+
   
 notifications:
   slack: utc-tx-gsm:oNPeOwfQS4YV4466fuXYqSUs
