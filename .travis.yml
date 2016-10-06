@@ -11,7 +11,7 @@ python:
 services: postgresql
 
 env:
-  - DJANGO=1.9.7
+  - DJANGO=1.9.2
 
 #before_install:
 #  - export DJANGO_SETTINGS_MODULE=application.settings
@@ -27,10 +27,11 @@ before_script:
   - psql -c "CREATE DATABASE travisci;" -U postgres
 
 script:
-  - python manage.py collectstatic --noinput
-  - python manage.py migrate
+  - python manage.py runserver
+#  - python manage.py collectstatic --noinput
+#  - python manage.py migrate
 #  - coverage run manage.py test hello
 
 after_success:
-  - coveralls
+#  - coveralls
 #  - codeclimate-test-reporter
