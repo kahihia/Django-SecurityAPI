@@ -24,3 +24,5 @@ install:
   
 notifications:
   slack: utc-tx-gsm:oNPeOwfQS4YV4466fuXYqSUs
+  
+script: make test
