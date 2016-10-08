@@ -27,12 +27,12 @@ before_script:
   - psql -c "CREATE DATABASE travisci;" -U postgres
 
 script:
-#  - nosetests
+  - nosetests
 #  - python /mysite/manage.py runserver
 #  - python manage.py collectstatic --noinput
 #  - python manage.py migrate
 #  - python run manage.py test hello
-  - coverage run manage.py test hello
+#  - coverage run manage.py test hello
 
 after_success:
   - coveralls
