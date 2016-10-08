@@ -6,7 +6,7 @@
 language: python
 
 python:
-  - 2.7
+  - 3
 
 services: postgresql
 
@@ -31,7 +31,7 @@ script:
    - python manage.py runserver
 #  - python manage.py collectstatic --noinput
 #  - python manage.py migrate
-#  - coverage run manage.py test hello
+#  - python run manage.py test hello
 
 after_success:
    - coveralls
