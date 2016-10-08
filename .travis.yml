@@ -26,15 +26,17 @@ install:
 before_script:
   - psql -c "CREATE DATABASE travisci;" -U postgres
 
-script: nosetests
+script:
+#  - nosetests
 #  - python /mysite/manage.py runserver
 #  - python manage.py collectstatic --noinput
 #  - python manage.py migrate
 #  - python run manage.py test hello
+  - coverage run /mysite/manage.py test hello
 
 after_success:
-   - coveralls
-#  - codeclimate-test-reporter
+  - coveralls
+  - codeclimate-test-reporter
 
 notifications:
     slack: utc-tx-gsm:oNPeOwfQS4YV4466fuXYqSUs
