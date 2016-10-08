@@ -40,3 +40,4 @@ after_success:
 
 notifications:
     slack: utc-tx-gsm:oNPeOwfQS4YV4466fuXYqSUs
+    email: false
