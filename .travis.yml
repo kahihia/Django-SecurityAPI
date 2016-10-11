@@ -41,3 +41,8 @@ after_success:
 notifications:
     slack: utc-tx-gsm:oNPeOwfQS4YV4466fuXYqSUs
     email: false
+deploy:
+  provider: heroku
+  api_key:
+    secure: "021a08cf-7b9d-4e4e-9def-ce9a26536fa7" #clé d'auth associée au compte commun
+    app: django-securityapi
