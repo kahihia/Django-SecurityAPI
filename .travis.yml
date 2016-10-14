@@ -38,7 +38,6 @@ script:
 - coverage run manage.py test
 
 after_success:
-- coveralls
 - codeclimate-test-reporter
 
 notifications:
