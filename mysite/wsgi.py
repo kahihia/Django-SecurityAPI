@@ -24,7 +24,7 @@ def load_env():
 
 load_env()
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "application.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "mysite.settings")
 
 application = get_wsgi_application()
 application = DjangoWhiteNoise(application)
