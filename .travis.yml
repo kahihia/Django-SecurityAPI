@@ -11,7 +11,7 @@ python:
 services: postgresql
 
 env:
-  - DJANGO=1.10.2
+- DJANGO=1.10.2
 
 #before_install:
 #  - export DJANGO_SETTINGS_MODULE=application.settings
@@ -19,24 +19,27 @@ env:
 #  - export PIP_USE_MIRRORS=true
 
 install:
-  - pip install -r requirements.txt
-  - pip install django==$DJANGO --quiet
-  - pip install psycopg2 --quiet
+- pip install -r requirements.txt
+- pip install django==$DJANGO --quiet
+  pip install psycopg2 --quiet
 
 before_script:
-  - psql -c "CREATE DATABASE travisci;" -U postgres
+- psql -c "CREATE DATABASE travisci;" -U postgres
 
 script:
-  - nosetests
-#  - python /mysite/manage.py runserver
+#  - nosetests
+#  - python mysite/manage.py runserver
 #  - python manage.py collectstatic --noinput
 #  - python manage.py migrate
 #  - python run manage.py test hello
-#  - coverage run manage.py test hello
+- python mysite/manage.py collectstatic --noinput
+- python mysite/manage.py makemigrations hello_world
+- python mysite/manage.py migrate
+- coverage run mysite/manage.py test
 
 after_success:
-  - coveralls
-  - codeclimate-test-reporter
+- coveralls
+- codeclimate-test-reporter
 
 notifications:
     slack: utc-tx-gsm:oNPeOwfQS4YV4466fuXYqSUs
