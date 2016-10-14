@@ -29,8 +29,9 @@ def assign_env_value(var_name):
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
 
-SECRET_KEY = assign_env_value('SECRET_KEY')
+
 debug_value = assign_env_value('DEBUG')
+SECRET_KEY = assign_env_value('SECRET_KEY')
 
 DEBUG = debug_value
 
