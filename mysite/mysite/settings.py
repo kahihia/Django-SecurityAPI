@@ -10,23 +10,30 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
-import os
+import os, sys
+import dj_database_url
+
+import getenv
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 MEDIA_ROOT = os.path.dirname(os.path.dirname(__file__))
 
+def assign_env_value(var_name):
+	if var_name in os.environ:
+		return getenv.env(var_name)
+	else:
+		sys.exit(var_name + " is not defined in the environment variables")
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'f1ijz5upva3di!yy5+8_b+ax5(ohg@lqvgsom#rl1rv26(wv--'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+debug_value = assign_env_value('DEBUG')
+SECRET_KEY = assign_env_value('SECRET_KEY')
 
-ALLOWED_HOSTS = []
+DEBUG = debug_value
 
 
 # Application definition
@@ -39,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'hello_world',
+	'hello',
 ]
 
 MIDDLEWARE = [
@@ -59,6 +67,7 @@ TEMPLATES = [
         'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
+			'debug': debug_value,
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
@@ -75,13 +84,22 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
-
+if "test" in sys.argv:
+	DATABASES = {
+		'default': {
+			'ENGINE': 'django.db.backends.sqlite3',
+			'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+			'CONN_MAX_AGE': 500,
+			'TEST' :
+			{
+				'NAME': os.path.join(BASE_DIR, 'db_test.sqlite3'),
+			}
+		},
+	}
+else:
+	DATABASES = {
+		'default': dj_database_url.config(default=assign_env_value('DATABASE_URL'), conn_max_age=500),
+	}
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
