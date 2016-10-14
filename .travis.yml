@@ -28,14 +28,14 @@ before_script:
 
 script:
 #  - nosetests
-#  - python mysite/manage.py runserver
+#  - python manage.py runserver
 #  - python manage.py collectstatic --noinput
 #  - python manage.py migrate
 #  - python run manage.py test hello
-- python mysite/manage.py collectstatic --noinput
-- python mysite/manage.py makemigrations hello_world
-- python mysite/manage.py migrate
-- coverage run mysite/manage.py test
+- python manage.py collectstatic --noinput
+- python manage.py makemigrations hello_world
+- python manage.py migrate
+- coverage run manage.py test
 
 after_success:
 - coveralls
