@@ -47,7 +47,7 @@ notifications:
 addons:
     code_climate:
         repo_token: 950661908571d319718297ce235ba06964429011b8cb829a473415cae62e93f9
-	
+    
 deploy:
   provider: heroku
   app: django-securityapi
