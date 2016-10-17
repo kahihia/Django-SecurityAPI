@@ -1,4 +1,4 @@
-.. DataRadar.IO API documentation master file, created by
+.. Django-SecurityAPI API documentation master file, created by
    sphinx-quickstart on Mon Apr 12 23:44:02 2016.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
@@ -6,8 +6,8 @@
 Welcome to DataRadar.IO API's documentation!
 ============================================
 
-:Author: Jonathan DEKHTIAR
-:Issues: https://github.com/DEKHTIARJonathan/Dataradar-API-Documentation/issues
+:Author: Guillaume JOUNEL, Julien JERPHANION, Jonathan DEKHTIAR
+:Issues: https://github.com/DataIsTheNewBlack/Django-SecurityAPI/issues
 :License: GNU GPL v3
 :Version: |version|
 :Generated: |today|
@@ -15,16 +15,11 @@ Welcome to DataRadar.IO API's documentation!
 Introduction
 -------------
 
-**DataRadar.IO** is an **open access** platform created in order to share freely and widely
-ressources concerning data mining, data science, machine learning, computer vision and so on.
-I really hope this platform will become a *must-see* for every student in data science and but
-also for data analysts and data scientists.
+**Django-SecurityAPI** is an **open source** application created in order to manage connexion to API. The idea is to use a hub to administer connexions from users : who are the people allowed to use that 'wooh!" API ? How many times are they allowed to use it a day ? a live-time ? ...
 
-In order to widely open access to the ressources, the platform provides an **API** access.
-It's free to use, you just need an API Key which is available upon request at : contact@dataradar.io
 
-If you need any specific method to crawl the platform, feel free to contact me.
-I'll be glad to provide some help for your projects.
+If you need any specific method to crawl the platform, feel free to contact us.
+We will be glad to provide some help for your projects.
 
 **Our Motto :** *Keep Sharing and Spreading Knowledge*
 
