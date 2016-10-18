@@ -41,12 +41,12 @@ after_success:
 - codeclimate-test-reporter
 
 notifications:
-    slack: utc-tx-gsm:oNPeOwfQS4YV4466fuXYqSUs
+    slack: $NOTIFICATIONS_SLACK
     email: false
 
 addons:
     code_climate:
-        repo_token: 950661908571d319718297ce235ba06964429011b8cb829a473415cae62e93f9
+        repo_token: $CODE_CLIMATE_REPO_TOKEN
     
 deploy:
   provider: heroku
