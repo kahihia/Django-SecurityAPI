@@ -51,4 +51,4 @@ addons:
 deploy:
   provider: heroku
   app: django-securityapi
-  api_key: HEROKU_KEY #clé d'auth associée au compte commun
+  api_key: $HEROKU_KEY #clé d'auth associée au compte commun
