@@ -82,4 +82,4 @@ ENV/
 .spyderproject
 
 # DB Files
-mysite/staticfiles/
+*/staticfiles/
