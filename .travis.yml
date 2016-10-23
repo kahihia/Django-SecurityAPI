@@ -28,3 +28,5 @@ deploy:
   provider: heroku
   app: django-securityapi
   api_key: "$HEROKU_KEY"
+  on:
+    all_branches: true
