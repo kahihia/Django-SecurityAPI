@@ -15,7 +15,7 @@ if __name__ == "__main__":
     if not any(x in os.environ for x in platforms):
         dotenv.read_dotenv()
         
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "gettingstarted.settings")
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "application.settings")
         
     try:
         from django.core.management import execute_from_command_line
