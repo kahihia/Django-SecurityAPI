@@ -76,10 +76,6 @@ celerybeat-schedule
 
 # virtualenv
 venv/
-ENV/
-
-# Spyder project settings
-.spyderproject
 
 # DB Files
 */staticfiles/
