@@ -1,3 +1,8 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+from __future__ import unicode_literals
+
 """
 Django settings for Security API project, on Heroku. For more info, see:
 https://github.com/heroku/heroku-django-template
@@ -9,16 +14,19 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.8/ref/settings/
 """
 
-import os, sys
-import dj_database_url
-
-import getenv
+import os, sys, dj_database_url, getenv
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
-MEDIA_ROOT = os.path.dirname(os.path.dirname(__file__))
+
+# ================== We append to the path the function folder containing generic functions
+
+functions_dir = os.path.join(BASE_DIR, 'functions')
+sys.path.insert(0, functions_dir)
+
+# ==================
 
 def assign_env_value(var_name):
 	if var_name in os.environ:
@@ -55,6 +63,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'landing_page',
 	'api_v1_0',
+	'rest_framework',
 )
 
 MIDDLEWARE_CLASSES = (
