@@ -51,7 +51,6 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'landing_page',
 	'api_v1_0',
 	'rest_framework',
     'oauth2_provider',
