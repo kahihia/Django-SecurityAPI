@@ -33,11 +33,11 @@ def assign_env_value(var_name):
 		return getenv.env(var_name)
 	else:
 		sys.exit(var_name + " is not defined in the environment variables")
-		
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
 
- 
+
 SECRET_KEY = assign_env_value('SECRET_KEY')
 DEBUG = assign_env_value('DEBUG')
 
@@ -54,6 +54,7 @@ INSTALLED_APPS = (
     'landing_page',
 	'api_v1_0',
 	'rest_framework',
+    'oauth2_provider',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -156,3 +157,9 @@ STATICFILES_DIRS = (
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'oauth2_provider.ext.rest_framework.OAuth2Authentication',
+    )
+}
