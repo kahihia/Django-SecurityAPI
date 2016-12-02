@@ -11,6 +11,10 @@ script:
 - python manage.py makemigrations landing_page api_v1_0
 - python manage.py migrate
 - python manage.py createsuperuser
+- $SUPERUSER_LGN
+- $SUPERUSER_EML
+- $SUPERUSER_PWD
+- $SUPERUSER_PWD
 - coverage run manage.py test
 after_success:
 - codeclimate-test-reporter
