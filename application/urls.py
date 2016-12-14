@@ -7,7 +7,7 @@ from django.conf.urls import include, url
 from django.contrib.auth.models import User, Group
 from django.contrib import admin
 admin.autodiscover()
-
+from django.contrib.auth import views as auth_views
 from rest_framework import permissions, routers, serializers, viewsets
 from oauth2_provider.ext.rest_framework import TokenHasReadWriteScope, TokenHasScope
 
@@ -47,5 +47,6 @@ router.register(r'groups', GroupViewSet)
 urlpatterns = [
 	url(r'^', include(router.urls)),
     url(r'^o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
+    url(r'^accounts/login/$', auth_views.login,{'template_name': 'registration/login.html'}),
     url(r'^admin/', include(admin.site.urls)),
 ]
