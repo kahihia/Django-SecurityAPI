@@ -73,7 +73,7 @@ router.register(r'groups', GroupViewSet)
 
 urlpatterns = [
 	url(r'^', include(router.urls)),
-    url(r'^o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
+    url(r'^o/', include(oauth2_endpoint_views, namespace='oauth2_provider')),# Previously : include('oauth2_provider.urls, namespace='oauth2_provider')
     url(r'^admin/', include(admin.site.urls)),
     url(r'^accounts/login/$', auth_views.login,{'template_name': 'registration/login.html'}),
     url(r'^api/hello', ApiEndpoint.as_view()),
