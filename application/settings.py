@@ -108,8 +108,8 @@ TEMPLATES = [
 },
 ]
 
-#if "test" in sys.argv:
-if 1:
+if "test" in sys.argv:
+#if 1:
 	DATABASES = {
 		'default': {
 			'ENGINE': 'django.db.backends.sqlite3',
