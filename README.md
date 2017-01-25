@@ -7,6 +7,11 @@
 [![Issue Count](https://codeclimate.com/github/DataIsTheNewBlack/Django-SecurityAPI/badges/issue_count.svg)](https://codeclimate.com/github/DataIsTheNewBlack/Django-SecurityAPI)
 [![Documentation Status](https://readthedocs.org/projects/django-securityapi/badge/?version=doc-user)](http://django-securityapi.readthedocs.io/en/latest/?badge=doc-user)
 [![Documentation Status](https://readthedocs.org/projects/django-securityapi/badge/?version=doc-dev)](http://django-securityapi.readthedocs.io/en/latest/?badge=doc-dev)
+<<<<<<< HEAD
+=======
+
+---
+>>>>>>> faa50133abf66225a83a0bacdb861eec11f2c085
 
 This app aims to sets ut a *Authorization Server* to grant access to *Consumer app*.
 This project uses [Django OAuth Toolkit](https://django-oauth-toolkit.readthedocs.io) & [Django-Rest-Framework](http://www.django-rest-framework.org/)
