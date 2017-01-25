@@ -35,10 +35,4 @@ We will be glad to provide some help for your projects.
    :caption: API Documentation
    :titlesonly:
 
-   General Information <API/api_doc>
-   GET article/id <API/article_id>
-   POST article/add <API/article_add>
-   GET articles/all <API/articles_all>
-   GET articles/list <API/articles_list>
-   GET article/search <API/articles_search>
-   
+   Setting up the minimal API <API/setup>
