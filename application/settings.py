@@ -1,8 +1,5 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
-from __future__ import unicode_literals
-
 """
 Django settings for Security API project, on Heroku. For more info, see:
 https://github.com/heroku/heroku-django-template
@@ -13,6 +10,8 @@ https://docs.djangoproject.com/en/1.8/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.8/ref/settings/
 """
+
+from __future__ import unicode_literals # for Python 3 with Python 2 retrocompatibility
 
 import os, sys, dj_database_url, getenv
 
