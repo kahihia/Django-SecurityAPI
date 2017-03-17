@@ -38,7 +38,7 @@ def getEnvVariable(var_name):
 
 
 SECRET_KEY = getEnvVariable('SECRET_KEY')
-DEBUG = getEnvVariable('DEBUG')
+DEBUG = False
 
 
 # Application definition
@@ -92,7 +92,7 @@ WSGI_APPLICATION = 'application.wsgi.application'
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
 DATABASES = {
-'default': dj_database_url.config(default=getEnvVariable('DATABASE_URL'), conn_max_age=500),
+    'default': dj_database_url.config(default=getEnvVariable('DATABASE_URL'), conn_max_age=500),
 }
 
 # Password validation
