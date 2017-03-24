@@ -6,12 +6,12 @@ Clonning Django-Security API
 
 Simply clone the repo via SSH :
 
-.. code-block:: shell
+.. code:: shell
    $ git clone git@github.com:DataIsTheNewBlack/Django-SecurityAPI.git
 
 or via HTTPS :
 
-.. code-block:: shell
+.. code:: shell
    $ git clone https://github.com/DataIsTheNewBlack/Django-SecurityAPI.git
 
 Virtual environment
