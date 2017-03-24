@@ -59,6 +59,7 @@ Then re-install the requirements
 
 You have to create a `local_settings.py` in the same folder as `setting.py` in order to extend this file (see the end of `setting.py`) ; this is useful for managing different
 data base between local development and deployement :
+
 .. code-block:: shell
 
    $ touch local_settings.py
