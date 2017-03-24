@@ -7,7 +7,7 @@ Clonning Django-Security API
 Simply clone the repo via SSH :
 
 .. code-block:: shell
-$ git clone git@github.com:DataIsTheNewBlack/Django-SecurityAPI.git
+  $ git clone git@github.com:DataIsTheNewBlack/Django-SecurityAPI.git
 
 or via HTTPS :
 
@@ -19,27 +19,30 @@ Virtual environment
 
 Go to the folder and create a *virtual environment* :
 
-```
-# For Python 3.6 or Python 3.x
-$ virtualenv -p /usr/bin/python3 venv3
-$ source venv3/bin/activate
+.. code-block:: shell
+  # For Python 3.6 or Python 3.x
+  $ virtualenv -p /usr/bin/python3 venv3
+  $ source venv3/bin/activate
 
-# For Python 2.7
-$ virtualenv venv
-$ source venv/bin/activate
-```
+  # For Python 2.7
+  $ virtualenv venv
+  $ source venv/bin/activate
 
-**In the following, all the `export` lines can be put at the end of the file ``/venv3/bin/activate`. It is easier to define the env variables that way since those lines are executed when lauching the venv.**
+
+**In the following, all the `export` lines can be put at the end of the file `/venv3/bin/activate`. It is easier to define the env variables that way since those lines are executed when lauching the venv.**
 
 You have to set some variables in your virtual env.
-First the "secret key" for the app (needed by Django). You can use [this site](http://www.miniwebtool.com/django-secret-key-generator) to generate one.
+First the "secret key" for the app (needed by Django). You can use `site
+<http://www.miniwebtool.com/django-secret-key-generator/>`_ to generate one.
+
 .. code-block:: shell
   $ export SECRET_KEY='someLongStringToImagine'
 
 
 Requirements
 ~~~~~~~~~~~~~~~~~~~~~
-Then install the requirements
+Then install the requirements :
+
 .. code-block:: shell
   $ pip install -r requirements.txt
 
