@@ -20,4 +20,4 @@ class Example_Class(CsrfExemptMixin, APIView):
         return makePayload(self,request,"GET")
 
     def post(self, request):
-        return makePayload(self,request,"post")
+        return makePayload(self,request,"POST")
