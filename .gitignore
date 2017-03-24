@@ -6,6 +6,9 @@ __pycache__/
 # C extensions
 *.so
 
+# Powershell script
+*.bat
+
 #MACOS File
 .DS_Store
 
@@ -48,6 +51,7 @@ htmlcov/
 # Django stuff:
 *.log
 local_settings.py
+*.sqlite3
 
 # Flask stuff:
 instance/
@@ -75,7 +79,7 @@ celerybeat-schedule
 .env
 
 # virtualenv
-venv/
+*venv*
 
 # DB Files
 */staticfiles/

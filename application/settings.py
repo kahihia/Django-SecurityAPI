@@ -1,8 +1,5 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
-from __future__ import unicode_literals
-
 """
 Django settings for Security API project, on Heroku. For more info, see:
 https://github.com/heroku/heroku-django-template
@@ -13,6 +10,8 @@ https://docs.djangoproject.com/en/1.8/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.8/ref/settings/
 """
+
+from __future__ import unicode_literals # for Python 3 with Python 2 retrocompatibility
 
 import os, sys, dj_database_url, getenv
 
@@ -28,18 +27,18 @@ sys.path.insert(0, functions_dir)
 
 # ==================
 
-def assign_env_value(var_name):
-	if var_name in os.environ:
-		return getenv.env(var_name)
-	else:
-		sys.exit(var_name + " is not defined in the environment variables")
+def getEnvVariable(var_name):
+  if var_name in os.environ:
+    return getenv.env(var_name)
+  else:
+    sys.exit(var_name + " is not defined in the environment variables")
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
 
 
-SECRET_KEY = assign_env_value('SECRET_KEY')
-DEBUG = assign_env_value('DEBUG')
+SECRET_KEY = getEnvVariable('SECRET_KEY')
+DEBUG = False
 
 
 # Application definition
@@ -51,8 +50,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-	'api_v1_0',
-	'rest_framework',
+    'api',
+    'rest_framework',
     'oauth2_provider',
 )
 
@@ -92,22 +91,9 @@ WSGI_APPLICATION = 'application.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
-if "test" in sys.argv:
-	DATABASES = {
-		'default': {
-			'ENGINE': 'django.db.backends.sqlite3',
-			'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-			'CONN_MAX_AGE': 500,
-			'TEST' :
-			{
-				'NAME': os.path.join(BASE_DIR, 'db_test.sqlite3'),
-			}
-		},
-	}
-else:
-	DATABASES = {
-		'default': dj_database_url.config(default=assign_env_value('DATABASE_URL'), conn_max_age=500),
-	}
+DATABASES = {
+    'default': dj_database_url.config(default=getEnvVariable('DATABASE_URL'), conn_max_age=500),
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
@@ -170,3 +156,9 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.IsAuthenticated',
     )
 }
+
+try:
+    from .local_settings import *
+except Exception as e:
+    print(e)
+    pass
