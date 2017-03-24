@@ -32,10 +32,10 @@ Go to the folder and create a *virtual environment* :
    $ source venv/bin/activate
 
 
-**In the following, all the `export` lines can be put at the end of the file `/venv3/bin/activate`. It is easier to define the env variables that way since those lines are executed when lauching the venv.**
+**In the following, all the :code:`export` lines can be put at the end of the file :code:`/venv3/bin/activate`. It is easier to define the env variables that way since those lines are executed when lauching the venv.**
 
 You have to set some variables in your virtual env.
-First the "secret key" for the app (needed by Django). You can use `site
+First the "secret key" for the app (needed by Django). You can use this `site
 <http://www.miniwebtool.com/django-secret-key-generator/>`_ to generate one.
 
 .. code-block:: shell
@@ -52,19 +52,19 @@ Then install the requirements :
    $ pip install -r requirements.txt
 
 
-If you have the error `pg_config not found` just install the `libpq_dev` package.
-If you have the error `could not run curl-config` install the `libcurl4-openssl-dev` package.
+If you have the error :code:`pg_config not found` just install the :code:`libpq_dev` package.
+If you have the error :code:`could not run curl-config` install the :code:`libcurl4-openssl-dev` package.
 Then re-install the requirements
 
 
-You have to create a `local_settings.py` in the same folder as `setting.py` in order to extend this file (see the end of `setting.py`) ; this is useful for managing different
+You have to create a :code:`local_settings.py` in the same folder as :code:`setting.py` in order to extend this file (see the end of :code:`setting.py`) ; this is useful for managing different
 data base between local development and deployement :
 
 .. code-block:: shell
 
    $ touch local_settings.py
 
-In this file are the settings set to use the local database (`DEBUG` is set to True for dev', false for production.) :
+In this file are the settings set to use the local database (:code:`DEBUG` is set to :code:`True` for dev', :code:`False` for production.) :
 
 .. code-block:: python
 
@@ -90,4 +90,4 @@ Then you have to run this in order to set up the models and the database :
    $ python manage.py makemigrations viewer
    $ python manage.py migrate
 
-Finally, `$ python manage.py runserver` runs the server locally.
+Finally, :code:`$ python manage.py runserver` runs the server locally.

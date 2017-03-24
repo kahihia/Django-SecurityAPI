@@ -35,7 +35,7 @@ We will be glad to provide some help for your projects.
    :caption: API Documentation
    :titlesonly:
 
-   Setting up the minimal API <API/setup>
    How does it work? <API/work>
+   Setting up the API <API/setup>
    Files and Folders' Organisation <API/filesNfolders>
    Ressources <API/ressources>

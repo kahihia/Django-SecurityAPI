@@ -6,8 +6,10 @@ If you aren't familiar with Django, we suggest you to check some at:
   - Django-Documentation_ (well written !)
   - Django-Tutorials_.
   - OpenClassRoom-Django-Course_ (if comfortable with french)
+  - SentDex-Tutorial_ (videos)
 
 
 .. _Django-Documentation: https://docs.djangoproject.com
 .. _Django-Tutorials: https://code.djangoproject.com/wiki/Tutorials
 .. _OpenClassRoom-Django-Course: https://openclassrooms.com/courses/developpez-votre-site-web-avec-le-framework-django
+.. _SentDex-Tutorial: https://www.youtube.com/playlist?list=PLQVvvaa0QuDeA05ZouE4OzDYLHY-XH-Nd
