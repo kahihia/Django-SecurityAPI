@@ -7,44 +7,77 @@ Clonning Django-Security API
 Simply clone the repo via SSH :
 
 .. code-block:: shell
-
-    $ git clone git@github.com:DataIsTheNewBlack/Django-SecurityAPI.git
+  $ git clone git@github.com:DataIsTheNewBlack/Django-SecurityAPI.git
 
 or via HTTPS :
 
 .. code-block:: shell
+  $ git clone https://github.com/DataIsTheNewBlack/Django-SecurityAPI.git
 
-    $ git clone https://github.com/DataIsTheNewBlack/Django-SecurityAPI.git
+Virtual environment
+~~~~~~~~~~~~~~~~~~~~~
 
-After going to the new `Django-SecurityAPI` folder you'll will have different types of files and folders.
-As the name of `Django-SecurityAPI` reveals, this project is based on the web-app Python package *Django*.
-If you aren't familiar with Django, we suggest you to check some Django Tutorials : https://code.djangoproject.com/wiki/Tutorials
+Go to the folder and create a *virtual environment* :
 
-You have to know the basis, that is to say :
+.. code-block:: shell
+  # For Python 3.6 or Python 3.x
+  $ virtualenv -p /usr/bin/python3 venv3
+  $ source venv3/bin/activate
 
-  - how variables and parametters are set (`settings.py`)
-  - how does the routage system works (`settings.py` and the `urls.py` files)
-  - how to set up and access the administration pannel
+  # For Python 2.7
+  $ virtualenv venv
+  $ source venv/bin/activate
 
 
-Here are the files you're going to find :
+**In the following, all the `export` lines can be put at the end of the file `/venv3/bin/activate`. It is easier to define the env variables that way since those lines are executed when lauching the venv.**
 
-+--------------------------------------------+-------------------------------------------------------------------+
-|**Files & Folders**                         |                                                   **Description** |
-+============================================+===================================================================+
-|/application                                |       The main folder for the app to work; contains `settings.py` |
-+--------------------------------------------+-------------------------------------------------------------------+
-|/functions      (*optionnal*)               |      A folder that contains some functions that can be used later |
-+--------------------------------------------+-------------------------------------------------------------------+
-|/registration                               |      A folder that contains some templates for the login page     |
-+--------------------------------------------+-------------------------------------------------------------------+
-|manage.py                                   |   The main file Django uses to run the server, to manage database.|
-+--------------------------------------------+-------------------------------------------------------------------+
-|requirements.txt                            |                     Some different packages our App needs to work |
-+--------------------------------------------+-------------------------------------------------------------------+
-|*.bat                                       |       Some Windows scripts used as alias for some django commands |
-+--------------------------------------------+-------------------------------------------------------------------+
-|.env.dist                                   |  A template of the file that describe some environnement variables|
-+--------------------------------------------+-------------------------------------------------------------------+
-|Procfile & Procfile.windows  (*optionnal*)  |    If you user Heroku only : describe actions the dynos have to do|
-+--------------------------------------------+-------------------------------------------------------------------+
+You have to set some variables in your virtual env.
+First the "secret key" for the app (needed by Django). You can use `site
+<http://www.miniwebtool.com/django-secret-key-generator/>`_ to generate one.
+
+.. code-block:: shell
+  $ export SECRET_KEY='someLongStringToImagine'
+
+
+Requirements
+~~~~~~~~~~~~~~~~~~~~~
+Then install the requirements :
+
+.. code-block:: shell
+  $ pip install -r requirements.txt
+
+
+If you have the error `pg_config not found` just install the `libpq_dev` package.
+If you have the error `could not run curl-config` install the `libcurl4-openssl-dev` package.
+Then re-install the requirements
+
+
+You have to create a `local_settings.py` in the same folder as `setting.py` in order to extend this file (see the end of `setting.py`) ; this is useful for managing different
+data base between local development and deployement :
+.. code-block:: shell
+  $ touch local_settings.py
+
+In this file are the settings set to use the local database (`DEBUG` is set to True for dev', false for production.) :
+
+.. code-block:: python
+  # Local settings : used for local development.
+  from __future__ import absolute_import
+  from .settings import PROJECT_ROOT, BASE_DIR
+  import os
+
+  DEBUG = True
+
+  DATABASES = {
+      'default': {
+          'ENGINE': 'django.db.backends.sqlite3',
+          'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+      }
+  }
+
+Then you have to run this in order to set up the models and the database :
+.. code-block:: shell
+  $ python manage.py makemigrations
+  $ python manage.py makemigrations viewer
+  $ python manage.py migrate
+
+Finally, `$ python manage.py runserver` runs the server locally.
