@@ -6,9 +6,19 @@ __pycache__/
 # C extensions
 *.so
 
+<<<<<<< HEAD
+#MACOS File
+.DS_Store
+
 # Distribution / packaging
 .Python
 env/
+build/
+=======
+# Distribution / packaging
+.Python
+env/
+>>>>>>> faa50133abf66225a83a0bacdb861eec11f2c085
 develop-eggs/
 dist/
 downloads/
@@ -34,6 +44,10 @@ pip-log.txt
 pip-delete-this-directory.txt
 
 # Unit test / coverage reports
+<<<<<<< HEAD
+.coverage
+htmlcov/
+=======
 htmlcov/
 .tox/
 .coverage
@@ -43,6 +57,7 @@ nosetests.xml
 coverage.xml
 *,cover
 .hypothesis/
+>>>>>>> faa50133abf66225a83a0bacdb861eec11f2c085
 
 # Translations
 *.mo
@@ -50,13 +65,47 @@ coverage.xml
 
 # Django stuff:
 *.log
+<<<<<<< HEAD
+local_settings.py
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+=======
 
 # Sphinx documentation
 docs/_build/
 build/
+>>>>>>> faa50133abf66225a83a0bacdb861eec11f2c085
 
 # PyBuilder
 target/
 
+<<<<<<< HEAD
+# IPython Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# celery beat schedule file
+celerybeat-schedule
+
+# dotenv
+.env
+
+# virtualenv
+venv/
+
+# DB Files
+*/staticfiles/
+=======
 #Ipython Notebook
 .ipynb_checkpoints
+>>>>>>> faa50133abf66225a83a0bacdb861eec11f2c085
