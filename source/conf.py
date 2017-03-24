@@ -45,9 +45,9 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'DataRadar.IO'
-copyright = u'2014 - 2016, Jonathan DEKHTIAR'
-author = u'Jonathan DEKHTIAR'
+project = u'Django-Security API'
+copyright = u'2016 - 2017, Guillaume JOUNEL, Julien JERPHANION'
+author = u'Guillaume JOUNEL, Julien JERPHANION'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
