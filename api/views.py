@@ -9,16 +9,15 @@ from braces.views import CsrfExemptMixin
 from time_funcs import get_timestamp
 
 class Example_Class(CsrfExemptMixin, APIView):
-    def get(self, request):
+    def makePayload(self,request,type):
         payload = dict()
         payload ["success"] = True
         payload ["timestamp"] = get_timestamp()
-        payload ["method"] = "GET"
-        return Response(payload)
+        payload ["method"] = type
+        return payload
+
+    def get(self, request):
+        return makePayload(self,request,"GET")
 
     def post(self, request):
-        payload = dict()
-        payload ["success"] = True
-        payload ["timestamp"] = get_timestamp()
-        payload ["method"] = "POST"
-        return Response(payload)
+        return makePayload(self,request,"post")
