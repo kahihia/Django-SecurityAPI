@@ -36,3 +36,4 @@ We will be glad to provide some help for your projects.
    :titlesonly:
 
    Setting up the minimal API <API/setup>
+   How does it work? <API/work>
