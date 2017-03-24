@@ -1,25 +1,28 @@
 Setting up your minimal API
-================
+===========================
 
 Clonning Django-Security API
-~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Simply clone the repo via SSH :
 
-.. code:: shell
+.. code-block:: shell
+
    $ git clone git@github.com:DataIsTheNewBlack/Django-SecurityAPI.git
 
 or via HTTPS :
 
-.. code:: shell
+.. code-block:: shell
+
    $ git clone https://github.com/DataIsTheNewBlack/Django-SecurityAPI.git
 
 Virtual environment
-~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~
 
 Go to the folder and create a *virtual environment* :
 
 .. code-block:: shell
+
    # For Python 3.6 or Python 3.x
    $ virtualenv -p /usr/bin/python3 venv3
    $ source venv3/bin/activate
@@ -36,6 +39,7 @@ First the "secret key" for the app (needed by Django). You can use `site
 <http://www.miniwebtool.com/django-secret-key-generator/>`_ to generate one.
 
 .. code-block:: shell
+
    $ export SECRET_KEY='someLongStringToImagine'
 
 
@@ -44,6 +48,7 @@ Requirements
 Then install the requirements :
 
 .. code-block:: shell
+
    $ pip install -r requirements.txt
 
 
@@ -55,11 +60,13 @@ Then re-install the requirements
 You have to create a `local_settings.py` in the same folder as `setting.py` in order to extend this file (see the end of `setting.py`) ; this is useful for managing different
 data base between local development and deployement :
 .. code-block:: shell
+
    $ touch local_settings.py
 
 In this file are the settings set to use the local database (`DEBUG` is set to True for dev', false for production.) :
 
 .. code-block:: python
+
    # Local settings : used for local development.
    from __future__ import absolute_import
    from .settings import PROJECT_ROOT, BASE_DIR
@@ -75,7 +82,9 @@ In this file are the settings set to use the local database (`DEBUG` is set to T
    }
 
 Then you have to run this in order to set up the models and the database :
+
 .. code-block:: shell
+
    $ python manage.py makemigrations
    $ python manage.py makemigrations viewer
    $ python manage.py migrate
