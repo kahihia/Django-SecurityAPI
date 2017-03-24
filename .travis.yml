@@ -1,3 +1,9 @@
+# blocklist
+branches:
+  except:
+  - Doc-Dev
+  - Doc-User
+
 language: python
 python:
 - 2.7
