@@ -17,8 +17,6 @@ or via HTTPS :
     $ git clone https://github.com/DataIsTheNewBlack/Django-SecurityAPI.git
 
 After going to the new `Django-SecurityAPI` folder you'll will have different types of files and folders.
-As the name of `Django-SecurityAPI` reveals, this project is based on the web-app Python package *Django*.
-If you aren't familiar with Django, we suggest you to check some Django Tutorials : https://code.djangoproject.com/wiki/Tutorials
 
 You have to know the basis, that is to say :
 

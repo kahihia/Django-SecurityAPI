@@ -37,3 +37,4 @@ We will be glad to provide some help for your projects.
 
    Setting up the minimal API <API/setup>
    How does it work? <API/work>
+   Ressources <API/ressources>
