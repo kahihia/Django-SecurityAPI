@@ -1,16 +1,62 @@
-{% load staticfiles %}
-<html>
-    <head>
-        <title>Django Security API</title>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
-    </head>
-    <body>
-        <div class="page-header">
-            <h1>Django Security API</h1>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+    <title>Django-SecurityAPI{% block title %} {% endblock %}</title>
+
+    <!-- CSS  -->
+    {% load static %}
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="{% static "css/materialize.css" %}" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="{% static "css/style.css" %}" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="{% static "css/loading.css" %}" type="text/css" rel="stylesheet" media="screen,projection" />
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{% static "images/favicon.jpg" %}"/>
+    <script type="text/javascript">
+
+    </script>
+</head>
+
+<body>
+<header>
+  <div class="navbar-fixed">
+    <nav class="blue-grey darken-3" role="navigation">
+        <div class="nav-wrapper container"><a id="logo-container" href="/" class="brand-logo right"><img src="{% static "images/favicon.jpg" %}" height="50px" width="50px" />Django-SecurityAPI</a>
+            <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+            <ul class="left hide-on-med-and-down">
+                <li><a href="/">Accueil</a></li>
+                <li><a href="#">Login</a></li>
+            </ul>
         </div>
-    {% block content %}{% endblock content %}
-    </body>
+    </nav>
+  </div>
+  <ul id="nav-mobile" class="side-nav">
+    <li><a href="/">Accueil</a></li>
+    <li><a href="#">Login</a></li>
+  </ul>
+</header>
+
+<main>
+    {% block content %}
+    {% endblock %}
+</main>
+
+    <footer class="page-footer blue-grey darken-4">
+        <div class="footer-copyright">
+            <div class="container">
+                Made with <a class="blue-text text-lighten-5" href="http://materializecss.com">Materialize</a>.
+            </div>
+        </div>
+    </footer>
+
+
+    <!--  Scripts-->
+    <script src="{% static "js/jquery-2.1.1.min.js" %}"></script>
+    <script src="{% static "js/materialize.js" %}"></script>
+
+    {% block script %} {% endblock %}
+</body>
+
 </html>

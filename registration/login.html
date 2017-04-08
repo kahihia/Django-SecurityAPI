@@ -2,34 +2,57 @@
 
 {% block content %}
 
-{% if form.errors %}
-<p>Your username and password didn't match. Please try again.</p>
-{% endif %}
+<div class="container">
+    <div class="section" id="Graphs">
+        <div class="row">
+          {% if form.errors %}
+          <div class="row">
+              <div class="col s8 m8">
+                  <div class="icon-block">
+                    <p>Your username and password didn't match. Please try again.</p>
+                  </div>
+              </div>
+          </div>
+          {% endif %}
 
-{% if next %}
-    {% if user.is_authenticated %}
-    <p>Your account doesn't have access to this page. To proceed,
-    please login with an account that has access.</p>
-    {% else %}
-    <p>Please login to see this page.</p>
-    {% endif %}
-{% endif %}
+          {% if next %}
+          <div class="row">
+              <div class="col s8 m8">
+                  <div class="icon-block">
+                  {% if user.is_authenticated %}
+                  <h3>Your account doesn't have access to this page. To proceed,
+                  please login with an account that has access.</h3>
+                  {% else %}
+                  <h3>Please login to see this page.</h3>
+                  {% endif %}
+                </div>
+              </div>
+          </div>
+          {% endif %}
 
-<form method="post" action="">
-{% csrf_token %}
-<table>
-<tr>
-    <td>{{ form.username.label_tag }}</td>
-    <td>{{ form.username }}</td>
-</tr>
-<tr>
-    <td>{{ form.password.label_tag }}</td>
-    <td>{{ form.password }}</td>
-</tr>
-</table>
+          {% csrf_token %}
+          <div class="row">
+              <div class="col s8 m8">
+                  <div class="icon-block">
+                    <form method="post" action="">
+                    <table>
+                    <tr>
+                        <td>{{ form.username.label_tag }}</td>
+                        <td>{{ form.username }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ form.password.label_tag }}</td>
+                        <td>{{ form.password }}</td>
+                    </tr>
+                    </table>
 
-<input type="submit" value="login" />
-<input type="hidden" name="next" value="{{ next }}" />
-</form>
-
+                    <input type="submit" value="Submit" />
+                    <input type="hidden" name="next" value="{{ next }}" />
+                  </form>
+                </div>
+              </div>
+          </div>
+      </div>
+    </div>
+</div>
 {% endblock %}
