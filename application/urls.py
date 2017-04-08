@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 
 from __future__ import unicode_literals # for Python 3 with Python 2 retrocompatibility
-
 from django.conf import settings
 from django.conf.urls import include, url
 from django.contrib.auth.models import User, Group
@@ -72,7 +71,7 @@ router.register(r'groups', GroupViewSet)
 # url(r'^blog/', include('blog.urls')),
 
 urlpatterns = [
-	url(r'^', include(router.urls)),
+    url(r'^', include(router.urls)),
     url(r'^o/', include(oauth2_endpoint_views, namespace='oauth2_provider')),# Previously : include('oauth2_provider.urls, namespace='oauth2_provider')
     url(r'^admin/', include(admin.site.urls)),
     url(r'^accounts/login/$', auth_views.login,{'template_name': 'registration/login.html'}),
