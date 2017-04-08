@@ -67,11 +67,13 @@ router.register(r'users', UserViewSet)
 router.register(r'groups', GroupViewSet)
 
 urlpatterns = [
-    url(r'^', include(router.urls)),
+    url(r'^rest/', include(router.urls)),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
     # Previously : url(r'^o/', include(oauth2_endpoint_views, namespace='oauth2_provider')),
-    url(r'^accounts/login/$', auth_views.LoginView.as_view(template_name ='application/templates/login.html')),
-    url(r'^accounts/change-password/$', auth_views.PasswordChangeView.as_view(template_name='application/templates/changePassword.html')),
+    url(r'^$',home,name='home')
+    url(r'^login/$', auth_views.LoginView.as_view(template_name ='login.html')),
+    url(r'^logout/$', auth_views.LogoutView.as_view(template_name ='logout.html')),
+    url(r'^change-password/$', auth_views.PasswordChangeView.as_view(template_name='changePassword.html')),
     url(r'(?P<typed>.+)$',handler404,name='handler404')
 ]
