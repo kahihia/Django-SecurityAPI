@@ -22,8 +22,8 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
 # ================== We append to the path the function folder containing generic functions
 
-functions_dir = os.path.join(BASE_DIR, 'functions')
-sys.path.insert(0, functions_dir)
+functionsDir = os.path.join(BASE_DIR, 'functions')
+sys.path.insert(0, functionsDir)
 
 # ==================
 
@@ -71,7 +71,7 @@ ROOT_URLCONF = 'application.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR],
+        'DIRS': [BASE_DIR+'/templates/'],
         'APP_DIRS': True,
         'OPTIONS': {
             'debug': True,

@@ -11,7 +11,7 @@ from django.contrib.auth import views as auth_views
 from rest_framework import permissions, routers, serializers, viewsets
 from oauth2_provider.ext.rest_framework import TokenHasReadWriteScope, TokenHasScope
 import oauth2_provider.views as oauth2_views
-from .views import ApiEndpoint
+from .views import handler404
 
 # first we define the serializers
 class UserSerializer(serializers.ModelSerializer):
@@ -66,16 +66,12 @@ router = routers.DefaultRouter()
 router.register(r'users', UserViewSet)
 router.register(r'groups', GroupViewSet)
 
-# Examples:
-# url(r'^$', 'settings.views.home', name='home'),
-# url(r'^blog/', include('blog.urls')),
-
 urlpatterns = [
-    url('^gest/', include('django.contrib.auth.urls')),
     url(r'^', include(router.urls)),
+    url(r'^admin/', include(admin.site.urls)),
     url(r'^o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
     # Previously : url(r'^o/', include(oauth2_endpoint_views, namespace='oauth2_provider')),
-    url(r'^admin/', include(admin.site.urls)),
-    url(r'^accounts/login/$', auth_views.login,{'template_name': 'registration/login.html'}),
-    url(r'^api/hello', ApiEndpoint.as_view()),
+    url(r'^accounts/login/$', auth_views.LoginView.as_view(template_name ='application/templates/login.html')),
+    url(r'^accounts/change-password/$', auth_views.PasswordChangeView.as_view(template_name='application/templates/changePassword.html')),
+    url(r'(?P<typed>.+)$',handler404,name='handler404')
 ]
