@@ -9,3 +9,7 @@ def handler404(request,typed):
     response = render(request,'404.html', {"typed":typed})
     response.status_code = 404
     return response
+
+def home(request):
+    """Returns the homepage"""
+    return render(request,'home.html', {})
