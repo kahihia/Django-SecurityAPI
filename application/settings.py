@@ -53,9 +53,10 @@ INSTALLED_APPS = (
     'api',
     'rest_framework',
     'oauth2_provider',
+    'corsheaders',
 )
 
-MIDDLEWARE_CLASSES = (
+MIDDLEWARE = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -64,6 +65,13 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+)
+
+CORS_ORIGIN_WHITELIST = (
+    'yoapplication.herokuapp.com',
+    'localhost:8000',
+    '127.0.0.1:9000'
 )
 
 ROOT_URLCONF = 'application.urls'
