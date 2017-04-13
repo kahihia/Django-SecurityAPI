@@ -8,6 +8,9 @@
         <br><br>
         <h1 class="header center orange-text">DashBoard</h1>
         <div class="row center">
+            {% if user.is_authenticated %}
+            <h4 class="header col s12 light">Welcome {{ user.username }} </h4>
+            {% endif %}
             <h5 class="header col s12 light">Django-Security API</h5>
         </div>
     </div>
@@ -20,25 +23,32 @@
             <div class="col s12 m12">
                 <div class="icon-block">
                   <div class="icon-block">
-                      <div class="row center">
-                        <div class="col s4">
-                          <a class="waves-effect waves-light btn-large" href="/login/">Login</a>
-                        </div>
+                    <div class="row center">
+                    {% if user.is_authenticated %}
                         <div class="col s4">
                           <a class="waves-effect waves-light btn-large" href="/logout/">Logout</a>
                         </div>
                         <div class="col s4">
+                          <a class="waves-effect waves-light btn-large" href="#">Change my info</a>
+                        </div>
+                        <div class="col s4">
                           <a class="waves-effect waves-light btn-large" href="o/applications/">Manage Apps</a>
                         </div>
+                        <p id="overview">
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vitae tincidunt diam. Vestibulum id felis aliquam, vehicula nisl nec, auctor nulla. Duis diam justo, posuere et tortor quis, aliquam rutrum massa. Sed at sem elit. Pellentesque erat risus, ornare at iaculis non, maximus ac magna. Nulla dolor neque, ultricies in pretium in, semper at ex. Aliquam porta orci a neque ornare dapibus. Pellentesque tempus, diam a egestas laoreet, sapien enim vulputate ex, at viverra neque sapien nec diam. In vitae nibh quam.
+
+                          Etiam mollis sapien vitae placerat rutrum. Morbi eu arcu volutpat, sagittis turpis quis, tristique tortor. Aenean lacinia quam vel porttitor pulvinar. Quisque quis malesuada nunc. Sed lobortis libero vitae elit volutpat, scelerisque hendrerit augue fermentum. Nunc at justo felis. Fusce elementum at libero a pulvinar. Phasellus vel sollicitudin magna, vel mollis magna. Maecenas id mollis nulla, sit amet gravida augue.
+
+                          Cras eget leo sodales, semper lectus eget, pulvinar lectus. Nulla facilisi. Maecenas ligula ante, venenatis nec tortor ut, ornare fermentum nisi. Donec commodo ut felis vel imperdiet. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc ut dui eu velit bibendum volutpat vitae at tortor. Duis nec volutpat ante, at lobortis nibh.
+                          <br>
+                        </p>
+                    {% else %}
+                    <h4 class="header col s12 light"> You have to login to continue</h4>
+                        <div class="col s12">
+                          <a class="waves-effect waves-light btn-large" href="/login/">Login</a>
+                        </div>
+                    {% endif %}
                       </div>
-                      <p id="overview">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vitae tincidunt diam. Vestibulum id felis aliquam, vehicula nisl nec, auctor nulla. Duis diam justo, posuere et tortor quis, aliquam rutrum massa. Sed at sem elit. Pellentesque erat risus, ornare at iaculis non, maximus ac magna. Nulla dolor neque, ultricies in pretium in, semper at ex. Aliquam porta orci a neque ornare dapibus. Pellentesque tempus, diam a egestas laoreet, sapien enim vulputate ex, at viverra neque sapien nec diam. In vitae nibh quam.
-
-                        Etiam mollis sapien vitae placerat rutrum. Morbi eu arcu volutpat, sagittis turpis quis, tristique tortor. Aenean lacinia quam vel porttitor pulvinar. Quisque quis malesuada nunc. Sed lobortis libero vitae elit volutpat, scelerisque hendrerit augue fermentum. Nunc at justo felis. Fusce elementum at libero a pulvinar. Phasellus vel sollicitudin magna, vel mollis magna. Maecenas id mollis nulla, sit amet gravida augue.
-
-                        Cras eget leo sodales, semper lectus eget, pulvinar lectus. Nulla facilisi. Maecenas ligula ante, venenatis nec tortor ut, ornare fermentum nisi. Donec commodo ut felis vel imperdiet. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc ut dui eu velit bibendum volutpat vitae at tortor. Duis nec volutpat ante, at lobortis nibh.
-                        <br>
-                      </p>
                   </div>
                 </div>
             </div>
