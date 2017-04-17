@@ -9,9 +9,6 @@ import datetime, time
 
 def get_timestamp():
     return datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d %H:%M:%S')
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
 
 def customRender(request, template, dictionary={}):
     dictionary.update({'post_count': Post.objects.count()})

@@ -26,17 +26,18 @@
         <div class="nav-wrapper container"><a id="logo-container" href="/" class="brand-logo right"><img src="{% static "images/favicon.jpg" %}" height="50px" width="50px" />{{ user.username }}</a>
             <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
             <ul class="left hide-on-med-and-down">
-                <li><a href="/">Accueil</a></li>
+                <li><a href="/">Home</a></li>
 
                 <li><a href="/o/applications/">Your Applications</a></li>
                 <li><a class="dropdown-button" href="#" data-activates="dropdown1" data-beloworigin="true" data-constrainwidth="false">Actions<i class="material-icons right">arrow_drop_down</i></a>
                   <ul id="dropdown1" class="dropdown-content" style="width:250px;position:absolute;top: 64px;left: 619.875px; opacity: 1; display: none;" >
                       {% if user.is_authenticated %}
                       <li><a class="grey-text darken-4" href="/logout/">Logout</a></li>
+                      <li><a href="/change-password/">Change Password</a></li>
                       {% else %}
                       <li><a class="grey-text darken-4" href="/login/">Login</a></li>
+                      <li><a class="grey-text darken-4" href="/signup/">Sign Up</a></li>
                       {% endif %}
-                      <li><a class="grey-text darken-4" href="/change-password/">Change-password</a></li>
                       <li><a class="grey-text darken-4" href="/admin/">Administration pannel</a></li>
                       <li><a class="grey-text darken-4" href="/rest/">Test REST API</a></li>
                   </ul>
@@ -46,13 +47,13 @@
     </nav>
   </div>
   <ul id="nav-mobile" class="side-nav">
-    <li><a href="/">Accueil</a></li>
+    <li><a href="/">Home</a></li>
     {% if user.is_authenticated %}
     <li><a href="/logout/">Logout</a></li>
+    <li><a href="/change-password/">Change Password</a></li>
     {% else %}
     <li><a href="/login/">Login</a></li>
     {% endif %}
-    <li><a href="/change-password/">Change-password</a></li>
     <li><a href="/rest/">Test REST API</a></li>
     <li><a href="/o/applications/">Your Applications</a></li>
     <li><a class="dropdown-button" href="#!" data-activates="dropdown2" data-beloworigin="true" data-stoppropagation="true">Actions<i class="material-icons right">arrow_drop_down</i></a>
@@ -61,6 +62,7 @@
         <li><a class="grey-text darken-4" href="/logout/">Logout</a></li>
         {% else %}
         <li><a class="grey-text darken-4" href="/login/">Login</a></li>
+        <li><a class="grey-text darken-4" href="/signup/">Sign Up</a></li>
         {% endif %}
         <li><a class="grey-text darken-4" href="/change-password/">Change-password</a></li>
         <li><a class="grey-text darken-4" href="/admin/">Administration pannel</a></li>
@@ -75,6 +77,7 @@
     {% endblock %}
 </main>
 
+    <!--  Footer -->
     <footer class="page-footer blue-grey darken-4">
         <div class="footer-copyright">
             <div class="container">
@@ -84,9 +87,11 @@
     </footer>
 
 
-    <!--  Scripts-->
+    <!--  Scripts -->
     <script src="{% static "js/jquery-2.1.1.min.js" %}"></script>
     <script src="{% static "js/materialize.js" %}"></script>
+
+    <!-- JS snippets for the dropdown menu to work -->
     <script>
       $( document ).ready(function() {
         $(".button-collapse").sideNav();

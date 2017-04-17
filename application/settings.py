@@ -141,7 +141,14 @@ ALLOWED_HOSTS = ['*']
 
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 STATIC_URL = '/static/'
-LOGIN_REDIRECT_URL = '/login/'
+
+# The URL where requests are redirected after login when the contrib.auth.login
+# view gets no next parameter.
+# (https://docs.djangoproject.com/en/1.11/ref/settings/#login-redirect-url)
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+
+LOGIN_URL = r'^login/$'
 
 # Extra places for collectstatic to find static files.
 STATICFILES_DIRS = (
