@@ -14,12 +14,13 @@
     font-size: inherit;
 }
 
+/* For sticky footer */
 body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
 }
-
+/* For sticky footer */
 main {
     flex: 1 0 auto;
 }

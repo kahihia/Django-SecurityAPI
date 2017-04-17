@@ -43,12 +43,20 @@
                           <br>
                         </p>
                     {% else %}
-                    <h4 class="header col s12 light"> You have to login to continue</h4>
-                        <div class="col s12">
-                          <a class="waves-effect waves-light btn-large" href="/login/">Login</a>
-                        </div>
-                    {% endif %}
+                    <div class="col s12">
+                      <h4 class="header col s12 light"> You have to login to continue</h4>
+                      <div class="col s12">
+                        <a class="waves-effect waves-light btn-large" href="/login/">Login</a>
                       </div>
+                    </div>
+                    <div class="col s12">
+                    <h6 class="header col s12 light"> If you don't have an account you can sign up.</h6>
+                        <div class="col s12">
+                          <a class="waves-effect waves-light btn" href="/signup/">Sign Up</a>
+                        </div>
+                    </div>
+                    {% endif %}
+                    </div>
                   </div>
                 </div>
             </div>
