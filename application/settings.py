@@ -71,7 +71,8 @@ MIDDLEWARE = (
 CORS_ORIGIN_WHITELIST = (
     'yoapplication.herokuapp.com',
     'localhost:8000',
-    '127.0.0.1:9000'
+    '127.0.0.1:9000',
+    '127.0.0.1:8000'
 )
 
 ROOT_URLCONF = 'application.urls'
