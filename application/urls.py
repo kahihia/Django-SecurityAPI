@@ -67,7 +67,8 @@ urlpatterns = [
     url(r'^$',home,name='home'), # Home Page
     url(LOGIN_URL, auth_views.LoginView.as_view(template_name ='login.html')),
     url(r'^logout/$', auth_views.LogoutView.as_view(template_name ='logout.html')),
-    url(r'^change-password/$', auth_views.PasswordChangeView.as_view(template_name='passwordReset.html')),
-    url(r'^signup/?$', CreateView.as_view(template_name='signup.html',form_class=UserCreationForm,success_url='/')),
+    url(r'^changePassword/$', auth_views.PasswordChangeView.as_view(template_name='changePassword.html',success_url='/passwordChangedDone/')),
+    url(r'^passwordChangedDone/$', auth_views.PasswordChangeDoneView.as_view(template_name='passwordChangedDone.html')),
+    url(r'^signUp/?$', CreateView.as_view(template_name='signUp.html',form_class=UserCreationForm,success_url='/')),
     url(r'(?P<typed>.+)$',handler404,name='handler404'), # Hacky way to redirect to a 404 error page
 ]

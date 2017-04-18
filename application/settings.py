@@ -149,7 +149,7 @@ STATIC_URL = '/static/'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
-LOGIN_URL = r'^login/$'
+LOGIN_URL = 'login/'
 
 # Extra places for collectstatic to find static files.
 STATICFILES_DIRS = (
